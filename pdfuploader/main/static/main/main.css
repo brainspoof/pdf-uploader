@@ -1,0 +1,61 @@
+html{
+    overflow-x: hidden;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    position: relative;
+    padding: 0 30%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 3.5em;
+    color: #333;
+    margin: 0.5em;
+}
+
+input{
+    background: none;
+    border: 2px #0E2431 solid;
+    width: 100%;
+    padding: 0.7em 1.5em;
+    border-radius: 100px;
+    font-size: 18px;
+    outline: none;
+}
+
+label{
+    display: none;
+}
+
+button{
+    margin: 0.5em 50%;
+    transform: translateX(-50%);
+    background: #0E2431;
+    color: #fff;
+    border: 2px #0E2431 solid;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    font-size: 18px;
+    width: 300px;
+    transition: 0.3s;
+    box-shadow: 0 0 0 #119DA4;
+    outline: none;
+}
+
+button:hover{
+    box-shadow: 0 0 7px #119DA4;
+}
+
+a{
+    outline: none;
+}
+
+.btn{
+    width: 300px;
+}
+

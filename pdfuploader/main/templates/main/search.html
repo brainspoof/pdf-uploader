@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %}Search PDFs{% endblock %}
+{% block body %}
+    <h1 class="heading">Search PDFs</h1>
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Search</button>
+    </form>
+    <a href="{% url 'home' %}"><button class="btn">Upload PDFs</button></a>
+
+    {% if pdfs %}
+    <h1 style="font-size: 3em; color: #333;">Your PDFs:</h1>
+    <ul>
+        {% for pdf in pdfs %}
+            <li><a style="color: #30889c;" target="_blank" href="{{pdf.pdf.url}}">{{pdf.pdf.name}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endblock %}

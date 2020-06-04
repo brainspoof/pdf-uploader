@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title %}Upload Stats{% endblock %}
+{% block body %}
+    <h1 style="font-size: 3em; color: #333;">File Upload Statistics:</h1>
+    <h2 style="font-size: 2em; color: #40b884">Success: {{success}}</h2>
+    <h2 style="font-size: 2em; color: #ed4a34">Failed: {{fail}}</h2>
+    {% if fail %}
+        <h3 style="font-size: 1.5em; color: #d14b38">Possible Reasons for Failure: </h3>
+        <ul>
+            <li>Files are not PDF (.pdf).</li>
+            <li>Files are Unrecognised.</li>
+        </ul>
+    {% endif %}
+    <a href="{% url 'home' %}"><button>Upload More Files.</button></a>
+{% endblock %}
