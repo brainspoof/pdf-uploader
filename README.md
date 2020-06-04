@@ -1,4 +1,4 @@
-# pdf-uploader
+# PDFs Uploader
 Upload and Save PDFs On the Cloud.
 
 This is a very sucure File Upload System that allows you to upload only PDF files.<br>
