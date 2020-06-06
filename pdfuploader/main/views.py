@@ -50,3 +50,6 @@ def search(request):
             if len(pdfs) == 0:
                 messages.error(request, 'No Files Found with those credentials.')
     return render(request, 'main/search.html', {'form': SearchForm, 'pdfs':pdfs})
+
+def contact(request):
+    return HttpResponse('Cool')

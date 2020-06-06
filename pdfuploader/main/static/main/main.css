@@ -1,9 +1,13 @@
-html{
+html, body {
+    max-width: 100%;
     overflow-x: hidden;
 }
 
 *{
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 form{
@@ -26,6 +30,12 @@ input{
     border-radius: 100px;
     font-size: 18px;
     outline: none;
+    margin: 0.5em 0;
+    display: inline;
+}
+
+form p{
+    display: block;
 }
 
 label{
@@ -33,7 +43,7 @@ label{
 }
 
 button{
-    margin: 0.5em 50%;
+    margin: 0.5em 0% 0.5em 50%;
     transform: translateX(-50%);
     background: #0E2431;
     color: #fff;
@@ -59,3 +69,12 @@ a{
     width: 300px;
 }
 
+@media screen and (max-width: 678px){
+    form{
+        padding: 0 5%;
+    }
+
+    .heading{
+        font-size: 2.5em;
+    }
+}

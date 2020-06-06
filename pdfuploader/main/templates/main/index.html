@@ -2,10 +2,51 @@
 {% block title %}Upload PDFs{% endblock %}
 {% block body %}
 <h1 class="heading">Upload PDFs</h1>
+<div class="info-messages"></div>
 <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
     <button class="btn" type="submit">Upload PDF</button>
 </form>
 <a href="{% url 'search' %}"><button class="btn">Search for your PDFs.</button></a>
+
+
+<style type="text/css">
+    .fa-info-circle{
+        color: #0E2431;
+        font-size: 21px;
+        position: relative;
+        margin: 0 102%;
+        top: -7.5vh;
+        /* border-radius: 100px;
+        padding: 3px;
+        border: 2px #0E2431 solid; */
+    }
+
+
+</style>
+
+<script type="text/javascript">
+    ps = document.querySelectorAll('form p');
+    infos = [
+        'Your Email Address',
+        'Enter a Secret Key to access your pdfs later on.',
+        'Add a min of 1 and a max of 5 PDF files.'
+    ]
+    let i = 0;
+    ps.forEach(p => {
+        p.innerHTML += `<span class="info"><i data-part="${i}" class="fa fa-info-circle"></i></span>`;
+        i++;
+    });
+
+    icons = document.querySelectorAll('i');
+    im = document.querySelector('.info-messages')
+    icons.forEach(icon => {
+        icon.onmouseover = function(){
+            a = infos[parseInt(icon.dataset.part)];
+            im.innerHTML = `<div class="info message">${a}</div>`;
+        }
+    });
+</script>
+
 {% endblock %}
